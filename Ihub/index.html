@@ -3,135 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW I Hub Assistant</title>
+    <title>Web Chat Integration</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
-        header, footer {
-            background-color: #2563eb;
+        header {
+            background-color: #4CAF50;
             color: white;
+            padding: 10px 0;
+            width: 100%;
             text-align: center;
-            padding: 1em;
         }
         main {
-            flex: 1;
-            padding: 1em;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        .bmw-virtual-assistant {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #2563eb;
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
+        footer {
+            margin-top: 20px;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to BMW I Hub</h1>
+        <h1>Welcome to Our Web Chat</h1>
     </header>
     <main>
-        <p>Chat with our BMW I Hub Assistant for any queries or assistance.</p>
+        <h2>Chat with Us</h2>
+        <p>Click the chat icon in the bottom right corner to start a conversation.</p>
     </main>
     <footer>
-        <p>&copy; 2024 BMW I Hub. All rights reserved.</p>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
     </footer>
 
-    <div class="bmw-virtual-assistant">
-        <img src="https://thilakreddy.com/chat-logo.png" alt="Chat with BMW I Hub" width="50" height="50">
-    </div>
-
+    <!-- Integrate the provided scripts -->
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script>
-        window.onload = function () {
-            let isChatOpen = false;
-
-            // Initialize Botpress Web Chat
-            window.botpressWebChat.init({
-                composerPlaceholder: "Chat with BMW I Hub...",
-                botConversationDescription: "iHub Assistant",
-                botId: "ec56de9c-27c0-43df-af20-61357562d911",
-                hostUrl: "https://cdn.botpress.cloud/webchat/v1",
-                messagingUrl: "https://messaging.botpress.cloud",
-                clientId: "ec56de9c-27c0-43df-af20-61357562d911",
-                hideWidget: true,
-                lazySocket: true,
-                botName: "BMW",
-                avatarUrl: "https://thilakreddy.com/chat-logo.png",
-                stylesheet: "https://thilakreddy.com/web-bot.css",
-                frontendVersion: "v1",
-                theme: "prism",
-                themeColor: "#2563eb",
-                disableAnimations: true,
-            });
-
-            setTimeout(function () {
-                // Your subsequent code
-                window.botpressWebChat.mergeConfig({
-                    hideWidget: false,
-                });
-                document.querySelector(".bmw-virtual-assistant").style.display = "block";
-            }, 5000);
-
-            let userLocation = {
-                latitude: null,
-                longitude: null,
-                status: null
-            };
-
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(
-                        function (position) {
-                            userLocation.latitude = position.coords.latitude;
-                            userLocation.longitude = position.coords.longitude;
-                            window.botpressWebChat.sendPayload({ type: 'trigger', payload: userLocation });
-                        },
-                        function (error) {
-                            console.error("Error occurred while fetching location: ", error);
-                            window.botpressWebChat.sendPayload({ type: 'trigger', payload: userLocation });
-                        }
-                    );
-                } else {
-                    console.error("Geolocation is not supported by this browser.");
-                    window.botpressWebChat.sendPayload({ type: 'trigger', payload: userLocation });
-                }
-            }
-
-            window.botpressWebChat.onEvent(
-                function (event) {
-                    if (event.type === "UI.OPENED") {
-                        document.querySelector(".bmw-virtual-assistant").style.display = "none";
-                        isChatOpen = true;
-                        window.botpressWebChat.setConfig({
-                            hideWidget: false,
-                        });
-                    } else if (event.type == "UI.CLOSED") {
-                        isChatOpen = false;
-                        setTimeout(function () {
-                            if (!isChatOpen) {
-                                document.querySelector(".bmw-virtual-assistant").style.display = "block";
-                            }
-                        }, 2000);
-                    } else if (event.type === "TRIGGER") {
-                        if (event.value.askLocation) {
-                            getLocation();
-                        }
-                    }
-                },
-                ["UI.OPENED", "UI.CLOSED", "TRIGGER"]
-            );
-        };
-    </script>
+    <script src="https://mediafiles.botpress.cloud/ec56de9c-27c0-43df-af20-61357562d911/webchat/config.js" defer></script>
 </body>
 </html>
