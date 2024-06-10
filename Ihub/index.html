@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW I Hub Assistant</title>
+    <title>Allianz Agent Bot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,101 +43,15 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to BMW I Hub Assistant (Updated JS SCRIPT)</h1>
+        <h1>Welcome to Allianz Agent Bot Demo</h1>
     </header>
     <div class="content">
-        <p>Chat with our virtual assistant for any inquiries or support.</p>
+        <p>Presented to you by AI&You</p>
     </div>
     <div class="bmw-virtual-assistant">
-        Chat with BMW I Hub
+        Chat with Allianz Agent Bot
     </div>
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script>
-        window.onload = function () {
-            let isChatOpen = false;
-          
-            // Ensure Botpress Web Chat is available
-            if (window.botpressWebChat) {
-                // Initialize Botpress Web Chat
-                window.botpressWebChat.init({
-                    composerPlaceholder: "Chat with BMW I Hub...",
-                    botConversationDescription: "iHub Assistant",
-                    botId: "ec56de9c-27c0-43df-af20-61357562d911",
-                    hostUrl: "https://cdn.botpress.cloud/webchat/v1",
-                    webhookId: "56c3648f-19dc-4587-8b9d-2f8089c1bd01",
-                    messagingUrl: "https://messaging.botpress.cloud",
-                    clientId: "ec56de9c-27c0-43df-af20-61357562d911",
-                    hideWidget: true,
-                    lazySocket: true,
-                    botName: "BMW",
-                    avatarUrl: "https://thilakreddy.com/chat-logo.png",
-                    stylesheet: "https://thilakreddy.com/web-bot.css",
-                    frontendVersion: "v1",
-                    theme: "prism",
-                    themeColor: "#2563eb",
-                    disableAnimations: true,
-                });
-              
-                setTimeout(function () {
-                    // Your subsequent code
-                    window.botpressWebChat.mergeConfig({
-                        hideWidget: false,
-                    });
-                    document.querySelector(".bmw-virtual-assistant").style.display = "block";
-                }, 5000);
-                
-                let userLocation = {
-                    latitude: null,
-                    longitude: null,
-                    status: null
-                };
-              
-                function getLocation() {
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(
-                            function (position) {
-                                userLocation.latitude = position.coords.latitude;
-                                userLocation.longitude = position.coords.longitude;
-                                window.botpressWebChat.sendPayload({ type: 'trigger', payload: userLocation });
-                            },
-                            function (error) {
-                                console.error("Error occurred while fetching location: ", error);
-                                window.botpressWebChat.sendPayload({ type: 'trigger', payload: userLocation });
-                            }
-                        );
-                    } else {
-                        console.error("Geolocation is not supported by this browser.");
-                        window.botpressWebChat.sendPayload({ type: 'trigger', payload: userLocation });
-                    }
-                }
-              
-                window.botpressWebChat.onEvent(
-                    function (event) {
-                        if (event.type === "UI.OPENED") {
-                            document.querySelector(".bmw-virtual-assistant").style.display = "none";
-                            isChatOpen = true;
-                            window.botpressWebChat.setConfig({
-                                hideWidget: false,
-                            });
-                        } else if (event.type == "UI.CLOSED") {
-                            isChatOpen = false;
-                            setTimeout(function () {
-                                if (!isChatOpen) {
-                                    document.querySelector(".bmw-virtual-assistant").style.display = "block";
-                                }
-                            }, 2000);
-                        } else if (event.type === "TRIGGER") {
-                            if (event.value.askLocation) {
-                                getLocation();
-                            }
-                        }
-                    },
-                    ["UI.OPENED", "UI.CLOSED", "TRIGGER"]
-                );
-            } else {
-                console.error("Botpress Web Chat script not loaded.");
-            }
-        };
-    </script>
+    <script src="https://mediafiles.botpress.cloud/ec570397-e924-4808-be07-627f468924a1/webchat/config.js" defer></script>
 </body>
 </html>
