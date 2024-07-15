@@ -53,5 +53,15 @@
     </div>
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/c3b80991-b84e-4fe6-a163-279fb9c6ca78/webchat/config.js" defer></script>
+    <script>
+      window.botpressWebChat.onEvent(
+        function (event) {
+          if (event.type === 'LIFECYCLE.LOADED') {
+            window.botpressWebChat.sendEvent({ type: 'show' })
+          }
+        },
+        ['LIFECYCLE.LOADED']
+      )
+    </script>
 </body>
 </html>
