@@ -1,1 +1,90 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Chatbot Code</title> <style> body { font-family: Arial, sans-serif; background-color: #0a3d3d; color: #ffffff; margin: 0; padding: 20px; } .gradient-background { background: linear-gradient(to bottom, #0047ab, #ff6f61); width: 1024px; height: 2048px; } .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; } .grid-item { background-color: #135a5a; padding: 15px; border-radius: 5px; } .image-container { width: 100%; height: 200px; background-color: #1a7a7a; margin-bottom: 10px; overflow: hidden; } .image-container img { width: 100%; height: 100%; object-fit: cover; } .text-block { background-color: #1a7a7a; padding: 15px; margin-bottom: 10px; } .feature-image { grid-column: span 2; grid-row: span 2; } .feature-image .image-container { height: 400px; } h2 { font-size: 20px; margin-bottom: 10px; color: #e0f0f0; } p { font-size: 14px; line-height: 1.6; color: #b0d0d0; } .accent-text { font-style: italic; color: #86c2c2; } .highlight-text { font-family: 'Arial', sans-serif; color: #ffffff; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); } </style> </head> <body> <div class="gradient-background"> <div class="grid-container"> <div class="grid-item"> <div class="image-container"> <img src="https://www.thespruce.com/thmb/EwQ7cXZS6AZkUCJ73UcJdB9e2Nw=/3580x2784/filters:no_upscale():max_bytes(150000):strip_icc()/Chuck-Schmidt-Getty-Images-56a5ae785f9b58b7d0ddfaf8.jpg" alt="Modern Living Room"> </div> <div class="text-block"> <h2>Modern Living Spaces</h2> <p>Transform your living area into a stylish and comfortable haven. Our curated designs blend form and function seamlessly.</p> <p class="accent-text">Discover the perfect balance of elegance and coziness.</p> <p class="highlight-text">Experience the ultimate in modern living with our exclusive designs.</p> </div> </div> <div class="grid-item"> <div class="text-block"> <h2>Color Harmony</h2> <p>Explore vibrant color combinations that breathe life into your home. From soothing pastels to bold statements, find your perfect palette.</p> <p class="accent-text">Let color tell your story.</p> <p class="highlight-text">Unleash your creativity with our harmonious color schemes.</p> </div> </div> <div class="grid-item"> <div class="image-container"> <img src="https://digitalsynopsis.com/wp-content/uploads/2019/04/beautiful-color-gradient-palettes-1.jpg" alt="Color Palette"> </div> <p>Inspiring color schemes for every room and mood.</p> </div> <div class="grid-item"> <div class="image-container"> <img src="https://img.freepik.com/premium-photo/tropical-paradise-bedroom-oasis_1036975-12400.jpg" alt="Bedroom Oasis"> </div> <p>Create your personal sanctuary with our bedroom design ideas.</p> </div> <div class="grid-item feature-image"> <div class="image-container"> <img src="https://i.pinimg.com/originals/0e/71/27/0e712784199a74d5344da735e280f10b.jpg" alt="Luxurious Bedroom"> </div> <div class="text-block"> <h2>Bedroom Elegance</h2> <p>Transform your bedroom into a serene and stylish retreat. Our designs focus on comfort, luxury, and personal expression.</p> <p class="accent-text">Wake up inspired every day in your dream bedroom.</p> <p class="highlight-text">Indulge in the elegance of our luxurious bedroom designs.</p> </div> </div> <div class="grid-item"> <div class="image-container"> <img src="https://i.pinimg.com/originals/da/2e/b0/da2eb097bfbc4f23a043cd6236500b46.jpg" alt="Accent Pieces"> </div> <p>Unique furniture and decor to add character to any space.</p> </div> <div class="grid-item"> <div class="text-block"> <h2>Accent Magic</h2> <p>Discover how small touches can make a big impact. Our accent pieces are carefully selected to elevate your home's style.</p> <p class="accent-text">Express yourself through carefully chosen details.</p> <p class="highlight-text">Enhance your space with our magical accent pieces.</p> </div> </div> <div class="grid-item"> <div class="image-container"> <img src="https://www.hampshirelight.net/storage/uploads/lighting-manufactures/occhio/occhio-lighting-hospitality_fgvax.jpg" alt="Lighting Design"> </div> <p>Illuminate your space with our curated lighting solutions.</p> </div> <div class="grid-item"> <div class="text-block"> <h2>Lighting Innovations</h2> <p>Explore our range of modern lighting options to set the perfect mood in every room. From ambient to task lighting, we've got you covered.</p> <p class="accent-text">Let there be light - and let it be beautiful.</p> <p class="highlight-text">Brighten your home with our innovative lighting solutions.</p> </div> </div> <div class="grid-item"> <div class="text-block"> <h2>Sustainable Living</h2> <p>Discover eco-friendly design options that don't compromise on style. Our green living solutions help you create a beautiful, responsible home.</p> <p class="highlight-text">Live sustainably without sacrificing style.</p> </div> </div> <div class="grid-item"> <div class="image-container"> <img src="https://mydecorative.com/wp-content/uploads/2021/05/eco-friendly-interior-design.jpg" alt="Eco-Friendly Designs"> </div> <p>Stylish and sustainable choices for the conscious homeowner.</p> </div> </div> </div> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Original Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="image-container">
+                <img src="https://www.thespruce.com/thmb/EwQ7cXZS6AZkUCJ73UcJdB9e2Nw=/3580x2784/filters:no_upscale():max_bytes(150000):strip_icc()/Chuck-Schmidt-Getty-Images-56a5ae785f9b58b7d0ddfaf8.jpg" alt="Modern Living Room">
+            </div>
+            <div class="text-block">
+                <h2>Modern Living Spaces</h2>
+                <p>Transform your living area into a stylish and comfortable haven. Our curated designs blend form and function seamlessly.</p>
+                <p class="accent-text">Discover the perfect balance of elegance and coziness.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="text-block">
+                <h2>Color Harmony</h2>
+                <p>Explore vibrant color combinations that breathe life into your home. From soothing pastels to bold statements, find your perfect palette.</p>
+                <p class="accent-text">Let color tell your story.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img src="https://digitalsynopsis.com/wp-content/uploads/2019/04/beautiful-color-gradient-palettes-1.jpg" alt="Color Palette">
+            </div>
+            <p>Inspiring color schemes for every room and mood.</p>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img src="https://img.freepik.com/premium-photo/tropical-paradise-bedroom-oasis_1036975-12400.jpg" alt="Bedroom Oasis">
+            </div>
+            <p>Create your personal sanctuary with our bedroom design ideas.</p>
+        </div>
+        <div class="grid-item feature-image">
+            <div class="image-container">
+                <img src="https://i.pinimg.com/originals/0e/71/27/0e712784199a74d5344da735e280f10b.jpg" alt="Luxurious Bedroom">
+            </div>
+            <div class="text-block">
+                <h2>Bedroom Elegance</h2>
+                <p>Transform your bedroom into a serene and stylish retreat. Our designs focus on comfort, luxury, and personal expression.</p>
+                <p class="accent-text">Wake up inspired every day in your dream bedroom.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img src="https://i.pinimg.com/originals/da/2e/b0/da2eb097bfbc4f23a043cd6236500b46.jpg" alt="Accent Pieces">
+            </div>
+            <p>Unique furniture and decor to add character to any space.</p>
+        </div>
+        <div class="grid-item">
+            <div class="text-block">
+                <h2>Accent Magic</h2>
+                <p>Discover how small touches can make a big impact. Our accent pieces are carefully selected to elevate your home's style.</p>
+                <p class="accent-text">Express yourself through carefully chosen details.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img src="https://www.hampshirelight.net/storage/uploads/lighting-manufactures/occhio/occhio-lighting-hospitality_fgvax.jpg" alt="Lighting Design">
+            </div>
+            <p>Illuminate your space with our curated lighting solutions.</p>
+        </div>
+        <div class="grid-item">
+            <div class="text-block">
+                <h2>Lighting Innovations</h2>
+                <p>Explore our range of modern lighting options to set the perfect mood in every room. From ambient to task lighting, we've got you covered.</p>
+                <p class="accent-text">Let there be light - and let it be beautiful.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="text-block">
+                <h2>Sustainable Living</h2>
+                <p>Discover eco-friendly design options that don't compromise on style. Our green living solutions help you create a beautiful, responsible home.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img src="https://mydecorative.com/wp-content/uploads/2021/05/eco-friendly-interior-design.jpg" alt="Eco-Friendly Designs">
+            </div>
+            <p>Stylish and sustainable choices for the conscious homeowner.</p>
+        </div>
+    </div>
+</body>
+</html>
